@@ -44,6 +44,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'dotenv-rails'
   gem 'letter_opener_web'
 end
 
@@ -52,4 +53,9 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'faker'
 gem 'cancan'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'carrierwave'
+gem 'mini_magick'
 
