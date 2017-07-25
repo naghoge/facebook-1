@@ -6,7 +6,7 @@
     <% @insts.each do |inst| %>
       <p>タイトル:<%= inst.title %></p>
       <p>本文:<%= inst.content %></p>
-      <p>投稿者<%=  User.find(blog.user_id).name %></p>
+      <p>投稿者<%=  User.find(inst.user_id).name %></p>
       <%= link_to "インスタを編集する", edit_inst_path(inst.id), class: 'btn btn-default btn-sm btn-primary' %>
       <%= link_to 'インスタを削除する', inst_path(inst.id), method: :delete,  class: 'btn btn-default btn-sm btn-danger' %>
     <% end %>
