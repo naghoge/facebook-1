@@ -88,7 +88,7 @@ Rails.application.configure do
   enable_starttls_auto: true
   }
   
-  config.action_mailer.default_url_options = { host: 'rocky-badlands-65305.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'afternoon-harbor-51884.herokuapp.com/' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {
