@@ -1,0 +1,2 @@
+module InstsHelper
+end
