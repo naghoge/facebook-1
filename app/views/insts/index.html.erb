@@ -1,15 +1,22 @@
 <div class="container">
   <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
-    <h1>ブログ一覧</h1>
-    <%= link_to "インスタを投稿する",  new_inst_path,  class: 'btn btn-default btn-sm btn-success'%>
+    <p><%= notice %></p>
+    <br>
+    
+    <h1><strong>アウスタグラム</strong></h1>
+    <%= link_to "アウスタ投稿",  new_inst_path,  class: 'btn btn-default btn-sm btn-info'%>
+    <%= link_to "画像一覧",  pictures_path,  class: 'btn btn-default btn-sm btn-info'%>
 
     <% @insts.each do |inst| %>
-      <p>タイトル:<%= inst.title %></p>
+      <h3><%= inst.title %></h3>
+      <p><%= image_tag(inst.image) %></p>
+      <p>投稿者：<%=  User.find(inst.user_id).name %></p>
       <p>本文:<%= inst.content %></p>
-      <p>投稿者<%=  User.find(inst.user_id).name %></p>
-      <%= link_to "インスタを編集する", edit_inst_path(inst.id), class: 'btn btn-default btn-sm btn-primary' %>
-      <%= link_to 'インスタを削除する', inst_path(inst.id), method: :delete,  class: 'btn btn-default btn-sm btn-danger' %>
+      <%= link_to "アウスタを編集する", edit_inst_path(inst.id), class: 'btn btn-default btn-sm btn-primary' %>
+      <%= link_to 'アウスタを削除する', inst_path(inst.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
       <%= profile_img(User.find(inst.user_id)) %>
     <% end %>
   </div>
 </div>
+
+

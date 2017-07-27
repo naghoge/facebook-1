@@ -8,21 +8,17 @@
 </head>
 <body>
   <header>
-    <h2>Instagram</h2>
-    
-      <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "ホーム", insts_path %></li>
-            </ul>
-          </li>
-          <% if user_signed_in? %>
-            <li><%= link_to 'マイページ', edit_user_registration_path %></li>
-            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to 'ログイン', new_user_session_path %></li>
-            <li><%= link_to 'サインアップ', new_user_registration_path %></li>
-          <% end %>
+    <h2>Outstagram</h2>
+        <div id="basic-button">
+            <span><%= link_to "ホーム", insts_path %></span>
+            <% if user_signed_in? %>
+              <span><%= link_to 'マイページ', edit_user_registration_path %></span>
+              <span><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></span>
+            <% else %>
+              <span><%= link_to 'ログイン', new_user_session_path %></span>
+              <span><%= link_to 'サインアップ', new_user_registration_path %></span>
+            <% end %>
+        </div>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -31,8 +27,5 @@
   
 <%= yield %>
 
-  <footer>
-    フッター
-  </footer>
 </body>
 </html>

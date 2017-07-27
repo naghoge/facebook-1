@@ -1,0 +1,9 @@
+<%= form_for(@picture) do |f| %>
+  
+  <%= f.label :画像 %>
+  <%= f.file_field :image %>
+  <br>
+  <%= f.submit %>
+  <br>
+<% end %>
+<%= link_to "画像一覧へ", pictures_path %>

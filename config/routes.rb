@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  get 'picture/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :insts, only: [:index, :new, :create, :edit, :destroy, :update]
+  resources :pictures, only: [:index, :edit, :destroy, :update]
 
   root 'top#index'
   

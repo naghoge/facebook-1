@@ -11,15 +11,18 @@ class InstsController < ApplicationController
   def create
     @inst = Inst.new(insts_params)
     @inst.user_id = current_user.id
-    @inst.save
-    NoticeMailer.sendmail_inst(@inst).deliver
-    goindex
+    if @inst.save
+      NoticeMailer.sendmail_inst(@inst).deliver
+      redirect_to insts_path, notice: "新インスタを投稿しました！"
+    else
+      redirect_to new_inst_path, notice: "タイトルを入力してください"
+    end
   end
   
   def destroy
     @inst = Inst.find(params[:id])
     @inst.destroy
-    goindex
+    redirect_to insts_path
   end
   
   def edit
@@ -29,16 +32,11 @@ class InstsController < ApplicationController
   def update
     @inst = Inst.find(params[:id])
     @inst.update(insts_params)
-    goindex
+    redirect_to insts_path
   end
   
    private
     def insts_params
-      params.require(:inst).permit(:title, :content)
+      params.require(:inst).permit(:title, :content, :image)
     end
-    
-    def goindex
-      redirect_to insts_path
-    end
-  
 end

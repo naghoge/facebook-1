@@ -10,7 +10,7 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports and disable caching.
-  config.consider_all_requests_local       = true
+  config.consider_all_requests_local       = false
   config.action_controller.perform_caching = false
   config.action_mailer.default_url_options = { host: 'https://ide.c9.io/naghoge/oyama-yuta' }
   config.action_mailer.delivery_method = :letter_opener_web

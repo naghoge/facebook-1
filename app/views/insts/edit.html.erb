@@ -5,7 +5,10 @@
   <%= f.label :content %>
   <%= f.text_field :content %>
   <br>
+  <%= f.label :画像 %>
+  <%= f.file_field :image %>
+  <br>
   <%= f.submit %>
 <% end %>
 
-<%= link_to "インスタの一覧へ", insts_path %>
+<%= link_to "アウスタの一覧へ", insts_path %>

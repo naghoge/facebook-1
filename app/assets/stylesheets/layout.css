@@ -1,12 +1,20 @@
 header{
-    background-color: midnightblue;
+    background-color: beige;
+    margin:0;padding:0;
 }
 
-footer{
-    background-color: midnightblue;
+body{
+    background-color: 	Ivory;
+    margin:0;
 }
 
 h2{
-    color: white;
-    font-style:oblique;
+    color: midnightblue;
+    font-family: Dotum;
+    text-align : center;
+}
+
+#basic-button{
+    letter-spacing: 5px;
+    text-align : center;
 }
