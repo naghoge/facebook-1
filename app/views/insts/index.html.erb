@@ -2,20 +2,22 @@
   <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
     <p><%= notice %></p>
     <br>
-    
-    <h1><strong>アウスタグラム</strong></h1>
-    <%= link_to "アウスタ投稿",  new_inst_path,  class: 'btn btn-default btn-sm btn-info'%>
-    <%= link_to "画像一覧",  pictures_path,  class: 'btn btn-default btn-sm btn-info'%>
-
-    <% @insts.each do |inst| %>
-      <h3><%= inst.title %></h3>
-      <p><%= image_tag(inst.image) %></p>
-      <p>投稿者：<%=  User.find(inst.user_id).name %></p>
-      <p>本文:<%= inst.content %></p>
-      <%= link_to "アウスタを編集する", edit_inst_path(inst.id), class: 'btn btn-default btn-sm btn-primary' %>
-      <%= link_to 'アウスタを削除する', inst_path(inst.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
-      <%= profile_img(User.find(inst.user_id)) %>
-    <% end %>
+    <div class ="intro">
+      <h1><strong>アウスタグラム</strong></h1>
+      <%= link_to "アウスタ投稿",  new_inst_path,  class: 'btn btn-default btn-sm btn-info'%>
+      <%= link_to "画像一覧",  pictures_path,  class: 'btn btn-default btn-sm btn-info'%>
+  
+      <% @insts.each do |inst| %>
+        <h3><%= inst.title %></h3>
+        <p><%= image_tag(inst.image) %></p>
+        <p>投稿者：<%=  User.find(inst.user_id).name %></p>
+        <p>本文:<%= inst.content %></p>
+        <%= link_to "アウスタを編集する", edit_inst_path(inst.id), class: 'btn btn-default btn-sm btn-primary' %>
+        <%= link_to 'アウスタを削除する', inst_path(inst.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+        <br>
+        <%= profile_img(User.find(inst.user_id)) %>
+      <% end %>
+    </div>
   </div>
 </div>
 

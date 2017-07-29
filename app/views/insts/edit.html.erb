@@ -1,3 +1,8 @@
+<div class="container">
+  <div class="col-md-2 col-md-offset-3 col-sm-11 ">
+  <br>
+  <%= link_to "アウスタの一覧へ", insts_path, class: 'btn btn-default btn-sm btn-info' %>
+  <br>
 <%= form_for(@inst) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -11,4 +16,6 @@
   <%= f.submit %>
 <% end %>
 
-<%= link_to "アウスタの一覧へ", insts_path %>
+
+  </div>
+</div<

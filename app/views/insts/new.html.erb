@@ -2,7 +2,7 @@
   <div class="col-md-2 col-md-offset-3 col-sm-11 ">
 <p><%= notice %></p>
 <br>
-
+  <%= link_to "アウスタの一覧へ", insts_path, class: 'btn btn-default btn-sm btn-info' %>
   <%= form_for(@inst) do |f| %>
     <%= f.label :タイトル %>
     <%= f.text_field :title %>
@@ -12,9 +12,9 @@
     <br>
     <%= f.label :画像選択 %>
     <%= f.file_field :image %>
+    <br>
     <div><%= f.submit %></div>
   <% end %>
   
-  <%= link_to "アウスタの一覧へ", insts_path %>
   </div>
 </div>

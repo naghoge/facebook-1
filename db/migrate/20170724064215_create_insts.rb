@@ -3,7 +3,7 @@ class CreateInsts < ActiveRecord::Migration
     create_table :insts do |t|
       t.string :title
       t.text :content
-      t.binary :image
+      t.string :image
       
       t.timestamps null: false
     end
