@@ -3,8 +3,8 @@
     <p><%= notice %></p>
     <br>
     <div class ="intro">
-      <%= link_to "投稿",  new_inst_path,  class: 'btn btn-default btn-sm btn-info'%>
-      <%= link_to "画像一覧",  pictures_path,  class: 'btn btn-default btn-sm btn-info'%>
+      <%= link_to "投稿",  new_inst_path,  class: 'btn btn-default btn-sm btn-primary'%>
+      <%= link_to "画像一覧",  pictures_path,  class: 'btn btn-default btn-sm btn-primary'%>
       <br><br>
   
       <% @insts.each do |inst| %>
@@ -14,7 +14,7 @@
              <%= link_to inst_path(inst) do %>
               <h4><strong><%= inst.title %></strong></h4> 
             <% end %>
-            written by <%=  User.find(inst.user_id).name %> <%= profile_img(User.find(inst.user_id)) %>
+            written by <%=  User.find(inst.user_id).name %> <%= profile_img(User.find(inst.user_id)) %> 
           </div>
           
           <div class="panel-body">
@@ -23,7 +23,7 @@
           </div>
           
           <div class="panel-footer">
-            <%= link_to "編集する", edit_inst_path(inst.id), class: 'btn btn-default btn-sm btn-primary' %>
+           <%= link_to "編集する", edit_inst_path(inst.id), class: 'btn btn-default btn-sm btn-primary' %>
             <%= link_to '削除する', inst_path(inst.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
           </div>
         </div>

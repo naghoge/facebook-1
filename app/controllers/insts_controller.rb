@@ -4,7 +4,7 @@ class InstsController < ApplicationController
   
   def index
     @insts = Inst.all
-      respond_to do |format|
+    respond_to do |format|
       format.html
       format.js
     end
