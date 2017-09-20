@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  get 'picture/index'
+  
+
+  # get 'picture/index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :insts, only: [:index, :new, :create, :edit, :destroy, :update]
+  
+  resources :insts do
+    resources :comments
+    post :confirm, on: :collection
+  end
+  
   resources :pictures, only: [:index, :edit, :destroy, :update]
 
   root 'top#index'
@@ -15,6 +22,7 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
