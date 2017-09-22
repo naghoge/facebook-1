@@ -13,9 +13,24 @@ class CommentsController < ApplicationController
     end
   end
   
-   private
+  def destroy
+    set_comment
+    @inst = @comment.inst
+    respond_to do |format|
+      @comment.destroy
+        format.html { redirect_to inst_path(@inst) }
+          flash.now[:notice] = "コメントが削除されました!"
+        format.js { render :index }
+    end
+  end
+  
+  private
     # ストロングパラメーター
     def comment_params
       params.require(:comment).permit(:inst_id, :content)
+    end
+    
+    def set_comment
+       @comment = Comment.find(params[:id])
     end
 end

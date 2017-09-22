@@ -8,6 +8,10 @@ body{
     margin:0;padding:0;
 }
 
+span{
+    color: #ffffff;
+}
+
 h2{
     color: #ffffff;
     font-family: inherit;
